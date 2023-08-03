@@ -337,6 +337,7 @@ impl SessionDescription {
         if let Some(codec) = codecs.get(&payload_type) {
             Ok(codec.clone())
         } else {
+            dbg!(payload_type);
             Err(Error::PayloadTypeNotFound)
         }
     }
