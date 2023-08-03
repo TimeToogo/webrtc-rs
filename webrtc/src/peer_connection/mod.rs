@@ -997,8 +997,9 @@ impl RTCPeerConnection {
                         // stable->SetLocal(offer)->have-local-offer
                         RTCSdpType::Offer => {
                             let check = {
-                                let last_offer = self.internal.last_offer.lock().await;
-                                sd.sdp != *last_offer
+                                // let last_offer = self.internal.last_offer.lock().await;
+                                // sd.sdp != *last_offer
+                                false
                             };
                             if check {
                                 Err(new_sdpdoes_not_match_offer)
@@ -1021,8 +1022,9 @@ impl RTCPeerConnection {
                         // have-local-pranswer->SetLocal(answer)->stable
                         RTCSdpType::Answer => {
                             let check = {
-                                let last_answer = self.internal.last_answer.lock().await;
-                                sd.sdp != *last_answer
+                                // let last_answer = self.internal.last_answer.lock().await;
+                                // sd.sdp != *last_answer
+                                false
                             };
                             if check {
                                 Err(new_sdpdoes_not_match_answer)
