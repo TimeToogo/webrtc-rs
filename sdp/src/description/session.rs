@@ -255,7 +255,7 @@ impl SessionDescription {
                 address_type: "IP4".to_string(),
                 unicast_address: "0.0.0.0".to_string(),
             },
-            session_name: "-".to_string(),
+            session_name: "session".to_string(),
             session_information: None,
             uri: None,
             email_address: None,
